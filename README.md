@@ -106,8 +106,9 @@ To set up and run the application locally:
 
 ### Backend Setup
 
-1. Navigate to the backend directory:
+1. open another cmd and navigate to the backend directory:
    ```
+   cd Football_Players_Game
    cd backend
    ```
 
@@ -124,6 +125,8 @@ To set up and run the application locally:
 4. Visit `http://localhost:5173` to start playing! 
 **notice: local host can be a different number**
 
+
+**In order to terminate, use ctrl + c inside both terminals (might work only in the second ctrl + c)**
 ---
 
 ## Future Improvements
