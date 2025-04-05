@@ -89,8 +89,8 @@ To set up and run the application locally:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/football-players-game.git
-   cd football-players-game
+   git clone https://github.com/VagenItay/Football_Players_Game
+   cd Football_Players_Game
    cd frontend
    ```
 
