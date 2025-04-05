@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Ensure the page takes up full height */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+body {
+  background-image: url('/background_photo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  line-height: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+.record-headline-container {
+  margin-top: 0rem; /* Moves the record section down */
+  margin-bottom: 2rem; /* Add margin to space it out from other elements */
+}
+
+@media (min-width: 768px) {
+  header {
+    margin-bottom: 4rem;
+  }
+
+  header h1 {
+    font-size: 2.25rem;
+  }
+}
+
+#auth-inputs {
+  width: 80%;
+  max-width: 28rem;
+  padding: 2rem;
+  margin: 1 auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, #474232 0%, #28271c 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+#img-container {
+  width: 100%;
+  max-width: 28rem;
+  max-height: 20rem; /* Set a max height to prevent it from taking too much space */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem; /* Add margin to push it down */
+}
+
+#auth-inputs img {
+  width: 200px; /* Set fixed width */
+  height: 250px; /* Set fixed height */
+  object-fit: cover; /* Ensure it fits well */
+  border-radius: 10px; /* Add rounded corners */
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+
+#auth-inputs h1 {
+  width: 100%; /* Keep it responsive */
+  margin: 0;
+  height: 3rem; /* Increase the height */
+  padding: 0.5rem; /* Adjust padding for inner spacing */
+  font-size: 1.75rem; /* Optional: Increase font size */
+  color:rgb(224, 98, 39);
+  text-align: center;
+}
+#auth-inputs input {
+  width: 100%; /* Keep it responsive */
+  max-width: 20rem; /* Reduce the width */
+  height: 3rem; /* Increase the height */
+  padding: 0.5rem; /* Adjust padding for inner spacing */
+  font-size: 1rem; /* Optional: Increase font size */
+}
+#name-on-top h1 {
+  position: absolute;
+  top: 1rem; /* Distance from the top */
+  left: 1rem; /* Distance from the left */
+  margin: 0;
+  font-size: 2rem;
+  color: #1f2937; /* Adjust color based on your design */
+  margin-bottom: 1rem;
+}
+
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #a84a0a;
+  border-radius: 6px;
+  border: none;
+  margin-top: 10px;
+}
+
+.level-button {
+  padding: 1rem; /* Keep padding consistent */
+  width: 100%; /* Ensure buttons are 100% width of their container */
+  max-width: 18rem; /* Adjust width to keep the button size uniform */
+  height: 50px; /* Set fixed height for consistency */
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 6px;
+  color: #1f2937;
+  background-color: #ecb061;
+  border: none;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Ensure the text is centered */
+
+}
+
+.record-button {
+  padding: 1rem 2rem;
+  width: 80%;
+  margin: 0 auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  color: #1f2937;
+  background-color: #9cee18;
+  border-radius: 6px;
+  border: none;
+  margin-top: 10px;
+}
+
+
+
+.level-button:hover{
+  transform: scale(1.05);
+  background-color: #8a881b;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.button:hover {
+  background-color: #06445c;
+}
+
+
+
