@@ -10,7 +10,7 @@ import axios from 'axios';
 export default function GamePage()
 {  
     const navigate = useNavigate();//used to move between pages
-    const location = useLocation(); const {inputData, game_level, game_mode} = location.state || {}; //to take the name from the level page
+    const location = useLocation(); const {inputData, game_level, game_mode, displayName} = location.state || {}; //to take the name from the level page
     const chosenPlayers = useRef(new Set());//all players already chosen for questions (avoid reptition)
     const [buttons,setButtons] = useState([]);//keeps the answers buttons
     const [countCorrects, setCorrects] = useState(0);//correct answers
@@ -32,12 +32,11 @@ export default function GamePage()
     function handleSubmit()  // a function to return to the level page, keep the name
     {
         saveAchievement(inputData, game_level, countCorrects, timeLeft);
-        navigate("/levelPage",{state: {inputData: inputData, isGamePage: true}}); 
+        navigate("/levelPage",{state: {inputData: inputData, displayName: displayName}}); 
     }
     function handleGoBack()
     {
-        if(!loading)
-            navigate("/levelPage",{state: {inputData: inputData, isFirstPage: false}}); 
+            navigate("/levelPage",{state: {inputData: inputData, displayName: displayName}}); 
     }
 
 

@@ -12,7 +12,7 @@ export default function LevelPage() {
     
     function handleSubmit(level)
     {
-        navigate("/gamePage", { state: { inputData: inputData, game_level: level, game_mode: gameMode } });
+        navigate("/gamePage", { state: { inputData: inputData, game_level: level, game_mode: gameMode, displayName: displayName } });
     }
     function handleGoToAchievements()
     {
@@ -31,7 +31,7 @@ export default function LevelPage() {
             <button type="button" className="level-button" onClick={() => handleSubmit("medium")}> medium </button>
             <button type="button" className="level-button" onClick={() => handleSubmit("hard")}> hard </button>
             <button type="button" className="record-button" onClick={handleGoToAchievements}> My record </button>
-            <button type="button" className="button" onClick={()=>navigate("/")}> Go back </button>
+            <button type="button" className="button" onClick={()=>navigate("/")}> Disconnect </button>
         </main>
         </>
         
