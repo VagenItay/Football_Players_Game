@@ -5,7 +5,7 @@ import { randomNum } from "./helper_functions";
 export default function LevelPage() {
     const navigate = useNavigate();
     const location = useLocation();
-    const {inputData, displayName} = location.state || {}; //to take the name and to check if returned from gamePage, check if still needed
+    const {inputData, displayName} = location.state || {}; 
     const gameMode = randomNum(2); // get 0 or 1 to set mode names or nationality
 
     

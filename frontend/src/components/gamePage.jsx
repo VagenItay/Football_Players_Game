@@ -10,14 +10,13 @@ import axios from 'axios';
 export default function GamePage()
 {  
     const navigate = useNavigate();//used to move between pages
-    const location = useLocation(); const {inputData, game_level, game_mode, displayName} = location.state || {}; //to take the name from the level page
+    const location = useLocation(); const {inputData, game_level, game_mode, displayName} = location.state || {}; 
     const chosenPlayers = useRef(new Set());//all players already chosen for questions (avoid reptition)
     const [buttons,setButtons] = useState([]);//keeps the answers buttons
     const [countCorrects, setCorrects] = useState(0);//correct answers
     const [buttonsClicked,setClicked] = useState(0);
     const level_time = 25;
     const [timeLeft, setTimeLeft] = useState(level_time); //timer for the game
-    const [loading, setLoading] = useState(true);
 
 
 
@@ -29,12 +28,12 @@ export default function GamePage()
 
 
     
-    function handleSubmit()  // a function to return to the level page, keep the name
+    function handleSubmit()  // a function to return to the level page when finished
     {
         saveAchievement(inputData, game_level, countCorrects, timeLeft);
         navigate("/levelPage",{state: {inputData: inputData, displayName: displayName}}); 
     }
-    function handleGoBack()
+    function handleGoBack() // return to the level page without finishing the game
     {
             navigate("/levelPage",{state: {inputData: inputData, displayName: displayName}}); 
     }
@@ -56,7 +55,6 @@ export default function GamePage()
             // Save the achievement for the user
             await axios.post(`http://localhost:8000/users/${userId}/achievements/`, achievement);
             console.log("Achievement saved!");
-            setLoading(false);
 
         } catch (error) {
             console.error("Error saving achievement", error);
@@ -67,7 +65,7 @@ export default function GamePage()
     function handleChangeName()//to change the current player after button click 
     {
         console.log("reach change name");
-        let index = randomNum(curr_players.length);//curr_players.length);
+        let index = randomNum(curr_players.length);
         let new_player = curr_players[index];
         
         while(chosenPlayers.current.has(new_player["name"]))
@@ -92,12 +90,11 @@ export default function GamePage()
         // Update the buttonsClicked state using the previous state
         setClicked((prevClicked) => {
             const newClicked = prevClicked + 1;
-            console.log("butt click:", newClicked); // You may still see the old value here, due to async state updates
         
             // Check if the limit is reached after the state is updated
             if (newClicked >= 10) {
                 // If limit is reached, stop further name changes or any other logic
-                return 10;  // Ensure it doesn't exceed 3
+                return 10; 
             }
             return newClicked;
         });

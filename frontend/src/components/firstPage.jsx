@@ -26,7 +26,7 @@ export default function FirstPage()
             const prefix = isNew ? "Welcome, " : "Welcome Back, ";
             const displayName = prefix + name;
 
-            return { success: true, displayName };  // Always return this object if successful
+            return { success: true, displayName };  
         } catch (error) {
             if (error.response) {
                 if (error.response.status === 401) {
@@ -35,7 +35,7 @@ export default function FirstPage()
                     return { success: false, error: "An error occurred. Please try again." };  // Generic error
                 }
             } else {
-                // Catch any non-response errors (network issues, etc.)
+                // Catch any non-response errors 
                 return { success: false, error: "An error occurred. Please try again." };
             }
         }
@@ -89,7 +89,6 @@ export default function FirstPage()
 
         createUser(playerName, password).then(result => {
             if (result.success) {
-                //Only navigate if the user creation is successful
                     navigate("/levelPage", { state: { inputData: playerName, displayName: result.displayName } });
             } else {
                 alert(result.error);
